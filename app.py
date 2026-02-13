@@ -1,7 +1,9 @@
-<<<<<<< HEAD
+import os
+from dotenv import load_dotenv # Add this too if it's missing
+
 from flask import Flask, render_template, request, redirect, session, url_for
 app = Flask(__name__)
-app.secret_key = "my_super_secret_key_987654"
+app.secret_key = os.getenv("FLASK_SECRET_KEY")
 
 
 import sqlite3
@@ -9,8 +11,7 @@ import hashlib
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = "my_super_secret_key_987654"
-
+app.secret_key = os.getenv("FLASK_SECRET_KEY")
 
 def get_db_connection():
     conn = sqlite3.connect("database.db")
@@ -152,7 +153,7 @@ if __name__ == "__main__":
     init_db()
     app.run(debug=True)
 
-=======
+
 from flask import Flask, render_template, request
 import sqlite3
 import hashlib
@@ -242,5 +243,3 @@ def verify():
 if __name__ == "__main__":
     init_db()
     app.run(debug=True)
-
->>>>>>> d6dffe7075570c5cff71b078b8d98dbd4ade9902

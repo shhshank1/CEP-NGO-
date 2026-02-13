@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="dashboard">
+
+    <h1>Dashboard Overview</h1>
+
+    <div class="stats">
+        <div class="stat-card">
+            <h3>Total Donations</h3>
+            <p>{{ total_donations }}</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Total Donors</h3>
+            <p>{{ total_donors }}</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Total Amount</h3>
+            <p>₹ {{ total_amount }}</p>
+        </div>
+    </div>
+
+    <h2>Latest 5 Donations</h2>
+
+    <table>
+        <tr>
+            <th>Donor</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Beneficiary</th>
+            <th>Date</th>
+        </tr>
+
+        {% for donation in latest %}
+        <tr>
+            <td>{{ donation.donor_name }}</td>
+            <td>{{ donation.donation_type }}</td>
+            <td>{{ donation.amount }}</td>
+            <td>{{ donation.beneficiary }}</td>
+            <td>{{ donation.timestamp }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+{% endblock %}

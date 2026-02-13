@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h2>Verify Donation</h2>
+
+    <form method="post">
+        <input name="hash" placeholder="Enter Transaction Hash" required>
+        <button type="submit" class="btn">Verify</button>
+    </form>
+</div>
+
+{% endblock %}

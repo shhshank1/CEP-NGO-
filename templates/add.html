@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h2>Add Donation</h2>
+
+    <form method="post">
+        <input name="donor" placeholder="Donor Name" required>
+<select name="type" required>
+    <option value="" disabled selected>Select Donation Type</option>
+    <option value="Money">Money</option>
+    <option value="Food">Food</option>
+    <option value="Clothing">Clothing</option>
+</select>
+        <input name="amount" placeholder="Amount / Quantity" required>
+        <input name="beneficiary" placeholder="Beneficiary Area" required>
+
+        <button type="submit" class="btn">Submit Donation</button>
+    </form>
+</div>
+
+{% endblock %}

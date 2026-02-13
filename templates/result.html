@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h2>Verification Result</h2>
+
+    <div class="status {{ 'verified' if status == 'VERIFIED ✅' else 'tampered' }}">
+        {{ status }}
+    </div>
+
+    <div class="details">
+        <p><strong>Donor:</strong> {{ record.donor_name }}</p>
+        <p><strong>Type:</strong> {{ record.donation_type }}</p>
+        <p><strong>Amount:</strong> {{ record.amount }}</p>
+        <p><strong>Beneficiary:</strong> {{ record.beneficiary }}</p>
+        <p><strong>Date:</strong> {{ record.timestamp }}</p>
+    </div>
+
+    <a href="/" class="btn secondary">Back Home</a>
+</div>
+
+{% endblock %}
